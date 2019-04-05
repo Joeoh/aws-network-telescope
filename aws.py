@@ -1,10 +1,9 @@
-from botocore.exceptions import ClientError
+    from botocore.exceptions import ClientError
 
 from utils import *
 
 import boto3
 
-# Let's use Amazon S3
 client = boto3.client('ec2')
 
 DryRun = False
