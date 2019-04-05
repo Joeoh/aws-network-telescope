@@ -6,7 +6,7 @@ Restart=always
 RestartSec=20
 Environment="TCPDUMP_FORMAT=%%Y-%%m-%%d-%%H"
 ExecStartPre=/bin/mkdir -p /home/johara/dumps/
-ExecStart=/usr/sbin/tcpdump -i ens160 -G 3600 -s 65535 -w '/home/johara/dumps/heanet_${TCPDUMP_FORMAT}.pcap'
+ExecStart=/usr/sbin/tcpdump -i all -G 3600 -s 65535 -w '/home/johara/dumps/heanet_${TCPDUMP_FORMAT}.pcap'
 ExecStop=/bin/kill -s QUIT $MAINPID
  
 [Install]
